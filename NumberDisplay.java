@@ -14,6 +14,7 @@ public class NumberDisplay
 {
     private int limit;
     private int value;
+    private NumberDisplay theOtherDisplay;
 
     /**
      * Constructor for objects of class NumberDisplay.
@@ -23,6 +24,18 @@ public class NumberDisplay
     {
         limit = rollOverLimit;
         value = 0;
+    }
+    
+    /**
+     * Constructor for objects of class NumberDisplay.
+     * Set the limit at which the display rolls over.
+     * Pass an object of itself to it, so calls can be done between these 2
+     */
+    public NumberDisplay(int rollOverLimit, NumberDisplay theOtherDisplay)
+    {
+        limit = rollOverLimit;
+        value = 0;
+        this.theOtherDisplay = theOtherDisplay;
     }
 
     /**
