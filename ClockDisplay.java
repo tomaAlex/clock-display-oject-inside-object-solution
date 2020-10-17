@@ -49,10 +49,15 @@ public class ClockDisplay
      */
     public void timeTick()
     {
+        // there is no need to check for the value held by the `minutes` NumberDisplay object
+        // the `minutes` object actually updates the `hours` object on itself
         minutes.increment();
-        if(minutes.getValue() == 0) {  // it just rolled over!
-            hours.increment();
-        }
+        // therefore, this code is not needed anymore
+        // ------------------------------------------------------------
+        // if(minutes.getValue() == 0) {  // it just rolled over!
+        //     hours.increment();
+        // }
+        // ------------------------------------------------------------
         updateDisplay();
     }
 
