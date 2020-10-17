@@ -37,6 +37,17 @@ public class NumberDisplay
         value = 0;
         this.theOtherDisplay = theOtherDisplay;
     }
+    
+    /**
+     * Update the other NumberDisplay object, passed as reference
+     * Call this when the first NumberDisplay (this) reached its limit
+     */
+    public void updateTheOtherNumberDisplay()
+    {
+        // I know this method is a little bit silly, as it is not really neccessary
+        // but it makes the code more obvious, so I'm gonna keep it that way :))
+        theOtherDisplay.increment();
+    }
 
     /**
      * Return the current value.
