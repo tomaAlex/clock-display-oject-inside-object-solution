@@ -25,7 +25,8 @@ public class ClockDisplay
     public ClockDisplay()
     {
         hours = new NumberDisplay(24);
-        minutes = new NumberDisplay(60);
+        // now, the minutes get the `hours` NumberDisplay object as `theOtherDisplay`
+        minutes = new NumberDisplay(60, minutes);
         updateDisplay();
     }
 
@@ -37,7 +38,8 @@ public class ClockDisplay
     public ClockDisplay(int hour, int minute)
     {
         hours = new NumberDisplay(24);
-        minutes = new NumberDisplay(60);
+        // now, the minutes get the `hours` NumberDisplay object as `theOtherDisplay`
+        minutes = new NumberDisplay(60, hours);
         setTime(hour, minute);
     }
 
