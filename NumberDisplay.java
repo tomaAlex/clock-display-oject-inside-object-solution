@@ -90,5 +90,13 @@ public class NumberDisplay
     public void increment()
     {
         value = (value + 1) % limit;
+        // the update has been done, verify whether this NumberDisplay has reached its limit
+        // if that's the case, the value restarted at 0
+        // check if the reference is valid, to know whether we should update the other NumberDisplay object
+        if (value == 0 && theOtherDisplay != null)
+        {
+            // it actually is the case that this NumberDisplay reseted and there is a valid reference to be updated
+            updateTheOtherNumberDisplay(); // all that is left is to update it
+        }
     }
 }
